@@ -929,7 +929,8 @@
             customArrowPrevSymbol: null,
             customArrowNextSymbol: null,
             monthSelect: false,
-            yearSelect: false
+            yearSelect: false,
+            onChangeMonth: function(month){}
         }, opt);
 
         opt.start = false;
@@ -1123,6 +1124,7 @@
                 if (!opt.singleMonth && !opt.singleDate && !isMonth2 && compare_month(month, opt.month2) >= 0 || isMonthOutOfBounds(month)) return;
                 showMonth(month, isMonth2 ? 'month2' : 'month1');
                 showGap();
+                opt.onChangeMonth(month);
             }
 
             function gotoNextMonth_stickily(self) {
@@ -1133,6 +1135,7 @@
                 showMonth(nextMonth1, 'month1');
                 showMonth(nextMonth2, 'month2');
                 showSelectedDays();
+                opt.onChangeMonth(month);
             }
 
 
@@ -1150,6 +1153,7 @@
                 if (isMonth2 && compare_month(month, opt.month1) <= 0 || isMonthOutOfBounds(month)) return;
                 showMonth(month, isMonth2 ? 'month2' : 'month1');
                 showGap();
+                opt.onChangeMonth(month);
             }
 
             function gotoPrevMonth_stickily(self) {
@@ -1160,6 +1164,7 @@
                 showMonth(prevMonth2, 'month2');
                 showMonth(prevMonth1, 'month1');
                 showSelectedDays();
+                opt.onChangeMonth(month);
             }
 
             box.attr('unselectable', 'on')
