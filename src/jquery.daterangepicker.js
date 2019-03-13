@@ -2499,6 +2499,7 @@
                     }
 
                     var todayDivAttr = {
+                        'data-fdate': moment(today.time).format('DD/MM/YYYY'),
                         time: today.time,
                         'data-tooltip': today.tooltip,
                         'class': 'day ' + today.type + ' ' + today.extraClass + ' ' + (today.valid ? 'valid' : 'invalid') + ' ' + (highlightToday ? 'real-today' : '')
