@@ -1135,7 +1135,6 @@
                 showMonth(nextMonth1, 'month1');
                 showMonth(nextMonth2, 'month2');
                 showSelectedDays();
-                opt.onChangeMonth(month);
             }
 
 
@@ -1164,7 +1163,6 @@
                 showMonth(prevMonth2, 'month2');
                 showMonth(prevMonth1, 'month1');
                 showSelectedDays();
-                opt.onChangeMonth(month);
             }
 
             box.attr('unselectable', 'on')
